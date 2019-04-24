@@ -444,6 +444,7 @@ void pressKey(){
                  display.setTextColor(WHITE,BLACK);
                  display.println(valA);
                  display.setCursor(75, 5);
+								  display.setTextColor(YELLOW,BLACK);
                  display.println("hou");
 
                  display.setCursor(75,15);
@@ -462,6 +463,7 @@ void pressKey(){
                  display.setTextColor(WHITE,BLACK);
                  display.println(valC);
                  display.setCursor(75, 28);
+								  display.setTextColor(YELLOW,BLACK);
                  display.println("hou");
 
                  display.setCursor(75, 38);
@@ -475,7 +477,7 @@ void pressKey(){
 								display.setCursor(15, 46);
 											display.print("<<< save >>>");
            display.setTextColor(GREEN,BLACK);
-               display.setCursor(15, 56);
+                display.setCursor(15, 56);
                  display.print(">>>monitor>>>");
 
 
@@ -564,6 +566,12 @@ void pressKey(){
     }
 
   }
+
+	if (menuCount == 6&& enc1.isPress() ) {
+
+
+
+	}
   if (menuCount == 7&& enc1.isPress() ) {
     display.fillScreen(MAGENTA );
 
