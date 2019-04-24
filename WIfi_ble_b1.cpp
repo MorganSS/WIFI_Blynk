@@ -71,6 +71,8 @@ bool connStatusChanged = false;
  int valB;
  int valC;
  int valD;
+ int valT;
+ int valM;
 
  Encoder enc1(CLK, DT, SW);
 
@@ -468,9 +470,15 @@ void pressKey(){
                  display.setTextColor(WHITE,BLACK);
                  display.setCursor(58, 38);
                  display.print(valD);
+
+								 display.setTextColor(RED,BLACK);
+								display.setCursor(15, 46);
+											display.print("<<< save >>>");
            display.setTextColor(GREEN,BLACK);
-                 display.setCursor(27, 50);
-                 display.print("<<exit>>");
+                display.setCursor(15, 55);
+                 display.print(">>>monitor>>>");
+
+
           //-------------------------------------------------------------------------------------------------displayoff
             display.setTextColor(RED,BLACK);
           display.setCursor(0, (menuCount*10)-3); //выбор пункта
@@ -556,7 +564,7 @@ void pressKey(){
     }
 
   }
-  if (menuCount == 6&& enc1.isPress() ) {
+  if (menuCount == 7&& enc1.isPress() ) {
     display.fillScreen(MAGENTA );
 
 		 display.setTextColor(RED,MAGENTA);
@@ -573,7 +581,7 @@ void pressKey(){
 
   }
 
-  if (menuCount >= 7) { // >6 пунктов
+  if (menuCount >= 8) { // >6 пунктов
           menuCount = 1;
           display.fillScreen(BLACK);
 
@@ -587,7 +595,7 @@ void loop() {
 
 	 pressKey();
 
-	 
+
 	if (connStatusChanged) {
 		if (isConnected) {
 			Serial.print("Connected to AP: ");
